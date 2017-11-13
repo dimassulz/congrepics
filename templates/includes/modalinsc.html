@@ -1,0 +1,35 @@
+<div id="modalInsc" class="modal" ng-controller="MainCtrl">
+    <div class="modal-content">
+        <h4>Pré Inscrição</h4>
+        <div class="row">
+            <form class="col s12" name="inscricao" ng-submit="salvarInscricao()">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="nome" type="text" ng-model="inscricao.nome" class="validate" required>
+                        <label for="nome">Nome</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email" type="email" ng-model="inscricao.email" class="validate" required>
+                        <label for="icon_email">E-mail</label>
+                    </div>
+                </div>
+                <div class="row right-align">
+                    <button class="btn waves-effect waves-light" ng-if="!btnSubmit" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <div class="row center">
+                        <h6 ng-if="btnSubmit"> {{inscrito}}</h6>
+                    </div>
+                    <div class="progress" ng-if="btnSubmit">
+                        <div class="indeterminate"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript-lazy">
+    $(".modal").modal();
+</script>
